@@ -4,7 +4,8 @@ go 1.26.4
 
 require (
 	github.com/GoCodeAlone/workflow v0.83.2
-	github.com/GoCodeAlone/workflow-plugin-compute-core v0.8.0
+	github.com/GoCodeAlone/workflow-plugin-compute-core v0.8.1
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -39,7 +40,6 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260608224507-4308a22a1bab // indirect
 	google.golang.org/grpc v1.81.1 // indirect
 	google.golang.org/protobuf v1.36.12-0.20260120151049-f2248ac996af // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 	modernc.org/libc v1.72.3 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.11.0 // indirect

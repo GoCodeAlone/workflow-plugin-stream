@@ -52,9 +52,9 @@ func TestPluginManifestAdvertisesStreamScaffold(t *testing.T) {
 		Name       string `json:"name"`
 		Constraint string `json:"constraint"`
 	}) bool {
-		return dep.Name == "workflow-plugin-compute-core" && dep.Constraint == ">=0.8.0"
+		return dep.Name == "workflow-plugin-compute-core" && dep.Constraint == ">=0.8.1"
 	}) {
-		t.Fatalf("dependencies missing workflow-plugin-compute-core >=0.8.0: %#v", manifest.Dependencies)
+		t.Fatalf("dependencies missing workflow-plugin-compute-core >=0.8.1: %#v", manifest.Dependencies)
 	}
 	if core.WorkloadVideoStream != "video-stream" {
 		t.Fatalf("compute-core video-stream workload kind not available")
