@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema://providers/workflow-plugin-stream/video-stream/operation-input/v1",
+  "title": "Workflow Stream Operation Input",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "stream_spec": {
+      "type": "object"
+    },
+    "stream_handle": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "object"
+    },
+    "rendition": {
+      "type": "object"
+    },
+    "transform": {
+      "type": "object"
+    }
+  }
+}

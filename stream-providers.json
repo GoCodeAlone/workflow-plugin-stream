@@ -1,0 +1,114 @@
+{
+  "version": "stream-provider-contracts.v1",
+  "providers": [
+    {
+      "protocol_version": "compute.v1alpha1",
+      "id": "workflow-plugin-stream.video-stream.v1",
+      "plugin_id": "workflow-plugin-stream",
+      "provider_id": "video-stream",
+      "contract_id": "workflow-plugin-stream.video-stream.v1",
+      "version": "v0.1.0",
+      "display_name": "MediaMTX video-stream provider",
+      "config_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/config/v1",
+      "config_schema_digest": "sha256:6b4b607a5046db8f18935c2cb34029c9db807de2f33a22ba91c1196c418e255a",
+      "operating_modes": [
+        "warm-service"
+      ],
+      "workload_kinds": [
+        "video-stream"
+      ],
+      "executor_providers": [
+        "stream-service-session"
+      ],
+      "execution_security_tiers": [
+        "hardened-container"
+      ],
+      "proof_tiers": [
+        "stream-segment-manifest"
+      ],
+      "network_modes": [
+        "direct",
+        "relay"
+      ],
+      "operations": [
+        {
+          "id": "start_stream",
+          "input_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-input/v1",
+          "input_schema_digest": "sha256:80756f2b391b002cfd906bd0b973f1d1e3c08be08632bbaa60e264f1b737dfe5",
+          "output_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-output/v1",
+          "output_schema_digest": "sha256:f9856101666889d58339872f3f45b9b0cbb5a5e3d9367bb7936cb4c1fc27d30f"
+        },
+        {
+          "id": "set_transform",
+          "input_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-input/v1",
+          "input_schema_digest": "sha256:80756f2b391b002cfd906bd0b973f1d1e3c08be08632bbaa60e264f1b737dfe5",
+          "output_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-output/v1",
+          "output_schema_digest": "sha256:f9856101666889d58339872f3f45b9b0cbb5a5e3d9367bb7936cb4c1fc27d30f"
+        },
+        {
+          "id": "add_destination",
+          "input_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-input/v1",
+          "input_schema_digest": "sha256:80756f2b391b002cfd906bd0b973f1d1e3c08be08632bbaa60e264f1b737dfe5",
+          "output_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-output/v1",
+          "output_schema_digest": "sha256:f9856101666889d58339872f3f45b9b0cbb5a5e3d9367bb7936cb4c1fc27d30f"
+        },
+        {
+          "id": "remove_destination",
+          "input_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-input/v1",
+          "input_schema_digest": "sha256:80756f2b391b002cfd906bd0b973f1d1e3c08be08632bbaa60e264f1b737dfe5",
+          "output_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-output/v1",
+          "output_schema_digest": "sha256:f9856101666889d58339872f3f45b9b0cbb5a5e3d9367bb7936cb4c1fc27d30f"
+        },
+        {
+          "id": "add_rendition",
+          "input_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-input/v1",
+          "input_schema_digest": "sha256:80756f2b391b002cfd906bd0b973f1d1e3c08be08632bbaa60e264f1b737dfe5",
+          "output_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-output/v1",
+          "output_schema_digest": "sha256:f9856101666889d58339872f3f45b9b0cbb5a5e3d9367bb7936cb4c1fc27d30f"
+        },
+        {
+          "id": "stop_stream",
+          "input_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-input/v1",
+          "input_schema_digest": "sha256:80756f2b391b002cfd906bd0b973f1d1e3c08be08632bbaa60e264f1b737dfe5",
+          "output_schema_ref": "schema://providers/workflow-plugin-stream/video-stream/operation-output/v1",
+          "output_schema_digest": "sha256:f9856101666889d58339872f3f45b9b0cbb5a5e3d9367bb7936cb4c1fc27d30f"
+        }
+      ],
+      "runtime_contract": {
+        "profiles": [
+          {
+            "id": "stream-service-session-hardened-container-stream-segment-manifest-runtime",
+            "runtime_profile": "service-oci-v1",
+            "executor_provider": "stream-service-session",
+            "execution_security_tier": "hardened-container",
+            "proof_tier": "stream-segment-manifest",
+            "allowed_runtime_tools": [
+              "podman",
+              "docker",
+              "nerdctl"
+            ],
+            "image_digest_required": true,
+            "rootfs_digest_required": true,
+            "allowed_mount_refs": [
+              "workspace"
+            ],
+            "writable_paths": [
+              "/tmp"
+            ],
+            "writable_rootfs": "forbidden",
+            "privileged": "forbidden",
+            "host_namespaces": "forbidden",
+            "host_socket": "forbidden",
+            "seccomp_disable": "forbidden",
+            "no_new_privileges_disable": "forbidden",
+            "conformance_profiles": [
+              "service-oci-v1",
+              "mediamtx-service-session-v1"
+            ],
+            "host_workspace_supported": true
+          }
+        ]
+      }
+    }
+  ]
+}
