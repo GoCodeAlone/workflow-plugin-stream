@@ -1,0 +1,38 @@
+{
+  "name": "workflow-plugin-stream",
+  "version": "0.0.0",
+  "description": "Live video ingest/multiplex/restream (MediaMTX)",
+  "author": "GoCodeAlone",
+  "license": "MIT",
+  "type": "external",
+  "tier": "community",
+  "private": false,
+  "minEngineVersion": "0.64.7",
+  "keywords": [
+    "compute",
+    "streaming",
+    "video",
+    "mediamtx",
+    "runtime-adapter"
+  ],
+  "homepage": "https://github.com/GoCodeAlone/workflow-plugin-stream",
+  "repository": "https://github.com/GoCodeAlone/workflow-plugin-stream",
+  "providersRef": "stream-providers.json",
+  "runtimeAdaptersRef": "runtime-adapters.json",
+  "dependencies": [
+    {
+      "name": "workflow-plugin-compute-core",
+      "constraint": ">=0.8.1"
+    }
+  ],
+  "capabilities": {
+    "configProvider": false,
+    "moduleTypes": [],
+    "stepTypes": [
+      "stream.start",
+      "stream.restream"
+    ],
+    "triggerTypes": []
+  },
+  "contracts": []
+}

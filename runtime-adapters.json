@@ -1,0 +1,39 @@
+{
+  "version": "1",
+  "protocol_version": "compute.v1alpha1",
+  "adapters": [
+    {
+      "protocol_version": "compute.v1alpha1",
+      "adapter_id": "stream-service-session",
+      "descriptor": {
+        "name": "stream-service-session",
+        "version": "v0.1.0",
+        "execution_security_tier": "hardened-container",
+        "proof_tier": "stream-segment-manifest",
+        "image_digest": "sha256:035ee04f91b1c7a0c02e13b2139ca2456e43b6bd6a80e3100e8c228556e07807",
+        "rootfs_digest": "sha256:a008c9a89b4040a3f6903df99616dcf46c68ef619ee6ef204e10c60455eccf6f"
+      },
+      "kinds": [
+        "service-session"
+      ],
+      "workload_kinds": [
+        "video-stream"
+      ],
+      "runtime_profiles": [
+        "service-oci-v1"
+      ],
+      "workspace_policy": "unavailable",
+      "conformance_profiles": [
+        "mediamtx-service-session-v1"
+      ]
+    }
+  ],
+  "host_owned_responsibilities": [
+    "task-admission",
+    "leases",
+    "authorization",
+    "credential-resolution",
+    "proof-reward-mutation",
+    "worker-binding"
+  ]
+}

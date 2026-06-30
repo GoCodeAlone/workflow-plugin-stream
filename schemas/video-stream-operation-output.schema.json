@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema://providers/workflow-plugin-stream/video-stream/operation-output/v1",
+  "title": "Workflow Stream Operation Output",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "stream_handle": {
+      "type": "string"
+    },
+    "ingest": {
+      "type": "object"
+    },
+    "status": {
+      "type": "string"
+    },
+    "manifest_ref": {
+      "type": "string"
+    }
+  }
+}

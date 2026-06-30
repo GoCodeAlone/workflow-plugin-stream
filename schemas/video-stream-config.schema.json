@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema://providers/workflow-plugin-stream/video-stream/config/v1",
+  "title": "Workflow Stream Provider Config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "mediamtx_bundle": {
+      "type": "string"
+    },
+    "default_ingest_host": {
+      "type": "string"
+    },
+    "auth_hook_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": [
+    "mediamtx_bundle",
+    "default_ingest_host",
+    "auth_hook_url"
+  ]
+}
